@@ -22,6 +22,11 @@ def divide(a: float, b: float) -> float | None:
         return None
     return a/b
 
+def get_numbers() -> tuple[float, float]:
+    first = float(input("Podaj pierwszą liczbę: "))
+    second = float(input("Podaj drugą liczbę: "))
+    return first, second
+
 
 def main () -> None:
     while True:
@@ -33,30 +38,22 @@ def main () -> None:
             break
 
         elif choice == "1":
-            first = float(input("Podaj pierwszą liczbę: "))
-            second = float(input("Podaj drugą liczbę: "))
-
+            first, second = get_numbers()
             result = add(first, second)
             print(f"Wynik dodawania: {result}")
 
         elif choice == "2":
-            first = float(input("Podaj pierwszą liczbę: "))
-            second = float(input("Podaj drugą liczbę: "))
-
+            first, second = get_numbers()
             result = subtract(first, second)
             print(f"Wynik odejmowania: {result}") 
 
         elif choice == "3":
-            first = float(input("Podaj pierwszą liczbe: ")) 
-            second = float(input("Podaj drugą liczbę "))
-
+            first, second = get_numbers()
             result = multiply(first, second)
             print(f"Wynik mnożenia: {result}")   
 
         elif choice == "4":
-            first = float(input("Podaj pierwszą liczbę "))
-            second = float(input("Podaj drugą liczbę "))
-
+            first, second = get_numbers()
             result = divide(first, second)
 
             if result is None:
